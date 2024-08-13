@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  status-monitor-db:
+    image: postgres:9.6.10
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: statusmonitordb
+    ports:
+      - 5432:5432
+    volumes:
+      - status-monitor-data:/var/lib/postgresql/data
+      - ./documents/data.sql:/docker-entrypoint-initdb.d/data.sql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      retries: 5
+
+  status-monitor:
+    build: status-monitor
+    image: status-monitor
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+    ports:
+      - 8080:8080
+
+volumes:
+  status-monitor-data:
