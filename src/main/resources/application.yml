@@ -5,7 +5,7 @@ spring:
   application:
     name: statusmonitor
   datasource:
-    url: jdbc:postgresql://localhost/statusmonitor
+    url: jdbc:postgresql://localhost/statusmonitordb
     username: postgres
     password: password
     driverClassName: org.postgresql.Driver

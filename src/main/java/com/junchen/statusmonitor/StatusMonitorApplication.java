@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StatusmonitorApplication {
+public class StatusMonitorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StatusmonitorApplication.class, args);
+		SpringApplication.run(StatusMonitorApplication.class, args);
 	}
-
 }
