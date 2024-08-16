@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "applications")
@@ -17,18 +18,15 @@ public class Applications {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "applications_id_seq")
     private Long id;
 
-    @Column(name = "user_id", nullable = false)
     private Long userId;  // Will be used when user-related features are added
 
-    @Column(name = "application_name", nullable = false)
     private String applicationName;
 
-    @Column(name = "created_at", nullable = false)
     private Date date;
 
-    @Column(name = "modified_at")
+    private List<String> notificationType;
+
     private Date modDate;
 
-    @Column(name = "token", nullable = false)
     private String token;
 }

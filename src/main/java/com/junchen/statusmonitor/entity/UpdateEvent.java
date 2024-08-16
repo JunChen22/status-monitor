@@ -8,7 +8,6 @@ import java.util.Date;
 public class UpdateEvent {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

@@ -1,0 +1,12 @@
+Q: not able to intialize data with data.sql
+A:
+spring.datasource.initialization-mode=always
+have been chagned to
+spring.sql.init.mode=always
+in Spring 2.7.0 and after
+
+and when using hibernate and jpa, the following property should be added to application.properties
+if you plan to use data.sql to initialize the database
+spring.jpa.defer-datasource-initialization=true
+this way the data.sql will be executed after the schema.sql/hibernate ddl-auto/entity creation
+

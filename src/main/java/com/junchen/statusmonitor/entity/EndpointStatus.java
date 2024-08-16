@@ -8,7 +8,6 @@ import java.util.Date;
 public class EndpointStatus {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
