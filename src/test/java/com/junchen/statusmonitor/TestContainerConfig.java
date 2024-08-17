@@ -9,10 +9,9 @@ import org.testcontainers.utility.DockerImageName;
 
 public abstract  class TestContainerConfig {
 
-    private static final String INIT_SCRIPT_PATH = "data.sql";
     private static final DockerImageName postgresImageName = DockerImageName.parse("postgres:16-bullseye");
 
-    private static final PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(postgresImageName).withInitScript(INIT_SCRIPT_PATH);
+    private static final PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(postgresImageName);
 
     @AfterAll
     static void afterAllBase() {

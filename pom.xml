@@ -30,7 +30,7 @@
 		<java.version>17</java.version>
 		<lombok.version>1.18.30</lombok.version>
 		<mapstruct.version>1.5.5.Final</mapstruct.version>
-		<skipTests>true</skipTests>         <!-- to perform test or not -->
+		<skipTests>false</skipTests>         <!-- to perform test or not -->
 		<testcontainer.version>1.17.6</testcontainer.version>
 	</properties>
 

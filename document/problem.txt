@@ -10,3 +10,5 @@ if you plan to use data.sql to initialize the database
 spring.jpa.defer-datasource-initialization=true
 this way the data.sql will be executed after the schema.sql/hibernate ddl-auto/entity creation
 
+source: https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
+https://docs.spring.io/spring-boot/how-to/data-initialization.html#howto.data-initialization.using-basic-sql-scripts
