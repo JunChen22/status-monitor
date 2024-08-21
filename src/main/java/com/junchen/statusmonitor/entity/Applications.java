@@ -1,5 +1,6 @@
 package com.junchen.statusmonitor.entity;
 
+import com.junchen.statusmonitor.entity.converter.StringListConverter;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "applications")
 @Getter
 @Setter
 public class Applications {
@@ -22,11 +22,15 @@ public class Applications {
 
     private String applicationName;
 
-    private Date date;
-
+    @Convert(converter = StringListConverter.class)
     private List<String> notificationType;
 
-    private Date modDate;
-
     private String token;
+
+    private String timezone;
+
+    private Date dateCreated;
+
+    private Date dateModified;
+
 }

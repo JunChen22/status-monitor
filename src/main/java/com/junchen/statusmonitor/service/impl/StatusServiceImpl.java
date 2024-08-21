@@ -6,5 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class StatusServiceImpl implements StatusService {
 
-
+    @Override
+    public void visitEndpoint(Long endpointId) {
+        System.out.println("Visiting endpoint " + endpointId);
+    }
 }

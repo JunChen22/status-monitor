@@ -1,0 +1,15 @@
+so for small application, @Scheduled might be fine.
+and using the following strategies will help this application better but still still
+be facing limitation
+- moving to the next level would be using concurrency, multiple threads
+- having multiple instance, like spining two docker container?
+- limit your service checks so you don't over whelm your application
+- retries and circuit breaker
+
+so then move to a different archiecture, monolith to micro service
+- dedicated endpoint/service checker
+- message queue
+- indexing and caching will help speed things up.
+- using @Scheduled annotation is still needed but service different purpose.
+  sends out an event or task to message queue to endpoint/service checker every
+  60 seconds.

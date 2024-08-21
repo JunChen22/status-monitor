@@ -22,9 +22,8 @@ public class Endpoint {
     @Id
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "application_id", nullable = false)
-    private Applications application;
+    @Column(nullable = false)
+    private Long  applicationId;
 
     @Column(nullable = false)
     private String endPointName;
@@ -35,6 +34,9 @@ public class Endpoint {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private MonitorType monitorType;
+
+    @Column(nullable = false)
+    private String currentStatus;
 
     @Column(nullable = false)
     private Date dateCreated;

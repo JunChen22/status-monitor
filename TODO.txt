@@ -1,0 +1,14 @@
+
+
+
+Security and user
+
+user
+
+
+
+later
+- update to Spring webflux from Spring web, and use reactive programming.
+- Resttemplate to WebClient. WebClient is non-blocking, Resttemplate is blocking. WebClient is the new way to go.
+start with a monolithic app, then split it into microservices
+

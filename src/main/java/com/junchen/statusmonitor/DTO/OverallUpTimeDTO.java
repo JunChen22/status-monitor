@@ -1,8 +1,10 @@
 package com.junchen.statusmonitor.DTO;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class OverallUpTimeDTO {
 
     private double last24HoursUptime;

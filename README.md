@@ -9,3 +9,4 @@ This is a simple status monitor that can be used to monitor the status of a serv
 
 
 
+http://localhost:8080/actuator/health

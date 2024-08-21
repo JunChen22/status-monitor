@@ -1,18 +1,21 @@
 package com.junchen.statusmonitor.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
 @Entity
+@Getter
+@Setter
 public class OverallUptime {
 
     @Id
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "application_id", nullable = false)
-    private Applications application;
+    @Column(nullable = false)
+    private Long applicationId;
 
     @Column(nullable = false)
     private double last24HoursUptime;
@@ -28,6 +31,6 @@ public class OverallUptime {
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date lastCalculated;
+    private Date dateModified;
 
 }

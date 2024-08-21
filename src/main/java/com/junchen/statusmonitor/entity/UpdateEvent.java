@@ -1,18 +1,30 @@
 package com.junchen.statusmonitor.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
 @Entity
+@Getter
+@Setter
 public class UpdateEvent {
+
+    public enum EventAction {
+        UP,
+        DOWN,
+        PAUSE
+    }
 
     @Id
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "endpoint_id", nullable = false)
-    private Endpoint endpoint;
+    @Column(nullable = false)
+    private Long applicationId;
+
+    @Column(nullable = false)
+    private Long endpointId;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -23,9 +35,6 @@ public class UpdateEvent {
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateRecorded;
+    private Date dateCreated;
 
-    public enum EventAction {
-        UP, DOWN, PAUSE
-    }
 }

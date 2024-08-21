@@ -1,18 +1,28 @@
 package com.junchen.statusmonitor.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
 @Entity
+@Getter
+@Setter
 public class EndpointStatus {
 
+    public enum Status {
+        UP,
+        DOWN,
+        PAUSE
+    }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "endpoint_id", nullable = false)
-    private Endpoint endpoint;
+    @Column(nullable = false)
+    private Long endpointId;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -23,9 +33,6 @@ public class EndpointStatus {
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateRecorded;
+    private Date dateCreated;
 
-    public enum Status {
-        UP, DOWN, PAUSE
-    }
 }

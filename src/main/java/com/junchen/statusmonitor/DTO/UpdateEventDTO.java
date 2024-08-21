@@ -1,18 +1,14 @@
 package com.junchen.statusmonitor.DTO;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
-public class UpdateEventDTO {
+@Getter
+@Setter
+public class UpdateEventDTO  {
 
     private List<EventDTO> events;
 
-    @Data
-    public static class EventDTO {
-        private String action;
-        private String description;
-        private String dateRecorded;
-    }
 }
